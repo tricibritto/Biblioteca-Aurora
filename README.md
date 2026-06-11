@@ -1,51 +1,6 @@
 # 📚 Biblioteca Aurora API
 
-## 📖 Sobre o Projeto
-
-A Biblioteca Aurora API é uma API REST desenvolvida utilizando Node.js e Express para o gerenciamento de livros e autores de uma biblioteca.
-
-O sistema permite cadastrar, consultar, atualizar e remover informações relacionadas aos livros e seus respectivos autores, aplicando conceitos fundamentais de desenvolvimento backend e organização de projetos.
-
----
-
-## 🎯 Objetivo da API
-
-Desenvolver uma API REST para gerenciamento de livros e autores, utilizando uma arquitetura organizada em rotas e controllers, facilitando a manutenção e expansão futura do sistema.
-
----
-
-## 👤 Integrante
-
-* Trícia de Britto Matos
-
----
-
-## 🗂️ Entidades do Sistema
-
-### 📚 Livros
-
-| Campo          | Tipo         |
-| -------------- | ------------ |
-| id             | INT          |
-| titulo         | VARCHAR(150) |
-| autor          | VARCHAR(100) |
-| genero         | VARCHAR(50)  |
-| editora        | VARCHAR(100) |
-| ano_publicacao | INT          |
-| quantidade     | INT          |
-
-### ✍️ Autores
-
-| Campo           | Tipo         |
-| --------------- | ------------ |
-| id              | INT          |
-| nome            | VARCHAR(100) |
-| nacionalidade   | VARCHAR(50)  |
-| data_nascimento | DATE         |
-| email           | VARCHAR(100) |
-| biografia       | TEXT         |
-
----
+API REST desenvolvida para gerenciamento de livros e autores, permitindo operações completas de cadastro, consulta, atualização e remoção de dados utilizando Node.js, Express e MySQL.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -53,150 +8,116 @@ Desenvolver uma API REST para gerenciamento de livros e autores, utilizando uma 
 * Express.js
 * MySQL
 * Postman
-* Git
-* GitHub
+* Dotenv
 
 ---
 
 ## 📂 Estrutura do Projeto
 
 ```text
-biblioteca-api/
+biblioteca-aurora/
 │
-├── src/
-│   ├── controllers/
-│   │   ├── livrosController.js
-│   │   └── autoresController.js
-│   │
-│   ├── routes/
-│   │   ├── livrosRoutes.js
-│   │   └── autoresRoutes.js
-│   │
-│   └── database/
-│
+├── controllers/
+├── models/
+├── routes/
+├── config/
 ├── prints/
-│
-├── database.sql
-├── README.md
+├── .env
 ├── server.js
 ├── package.json
-├── .env
-└── .gitignore
-```
-
----
-
-## 🔗 Endpoints Desenvolvidos
-
-### 📚 Livros
-
-| Método | Endpoint    | Descrição              |
-| ------ | ----------- | ---------------------- |
-| GET    | /livros     | Listar todos os livros |
-| GET    | /livros/:id | Buscar livro por ID    |
-| POST   | /livros     | Cadastrar livro        |
-| PUT    | /livros/:id | Atualizar livro        |
-| DELETE | /livros/:id | Remover livro          |
-
-### ✍️ Autores
-
-| Método | Endpoint     | Descrição               |
-| ------ | ------------ | ----------------------- |
-| GET    | /autores     | Listar todos os autores |
-| GET    | /autores/:id | Buscar autor por ID     |
-| POST   | /autores     | Cadastrar autor         |
-| PUT    | /autores/:id | Atualizar autor         |
-| DELETE | /autores/:id | Remover autor           |
-
----
-
-## 🗄️ Banco de Dados
-
-O banco de dados foi modelado em MySQL utilizando duas tabelas:
-
-* autores
-* livros
-
-O script completo encontra-se no arquivo:
-
-```text
-database.sql
-```
-
----
-
-## 🧪 Evidências dos Testes
-
-As evidências dos testes realizados encontram-se na pasta:
-
-```text
-prints/
+└── README.md
 ```
 
 ### Estrutura do Projeto
 
-* estrutura.png
-
-### Banco de Dados MySQL
-
-* mysql1.png
-* mysql2.png
-
-### Testes dos Endpoints de Livros
-
-* postman-get-livros.png
-* postman-get-livros-id.png
-* postman-post-livros.png
-* postman-put-livro1.png
-* postman-delete-livro.png
-
-### Testes dos Endpoints de Autores
-
-* postman-get-autores.png
-* postman-get-autores-id.png
-* postman-post-autores.png
-* postman-put-autor1.png
-* postman-delete-autor.png
+![Estrutura do Projeto](prints/estrutura.png)
 
 ---
 
-## ▶️ Como Executar o Projeto
+## 🗄️ Banco de Dados MySQL
 
-### Instalar as dependências
+### Criação das Tabelas
 
-```bash
-npm install
-```
+![Banco de Dados 1](prints/mysql1.png)
 
-### Executar o servidor
+### Registros Inseridos
 
-```bash
-node server.js
-```
-
-O servidor será iniciado em:
-
-```text
-http://localhost:3000
-```
+![Banco de Dados 2](prints/mysql2.png)
 
 ---
 
-## 📋 Métodos HTTP Testados
+## 📖 Testes dos Endpoints de Livros
 
-* GET
-* POST
-* PUT
-* DELETE
+### GET - Listar Livros
 
-Todos os métodos foram validados utilizando o Postman.
+![GET Livros](prints/postman-get-livros.png)
+
+### GET - Buscar Livro por ID
+
+![GET Livro por ID](prints/postman-get-livros-id.png)
+
+### POST - Cadastrar Livro
+
+![POST Livro](prints/postman-post-livros.png)
+
+### PUT - Atualizar Livro
+
+![PUT Livro](prints/postman-put-livro1.png)
+
+### DELETE - Remover Livro
+
+![DELETE Livro](prints/postman-delete-livro.png)
 
 ---
 
-## 🌐 Repositório GitHub
+## ✍️ Testes dos Endpoints de Autores
 
-Link do repositório:
+### GET - Listar Autores
 
-```text
-Adicionar aqui o link do GitHub após a publicação do projeto.
-```
+![GET Autores](prints/postman-get-autores.png)
+
+### GET - Buscar Autor por ID
+
+![GET Autor por ID](prints/postman-get-autores-id.png)
+
+### POST - Cadastrar Autor
+
+![POST Autor](prints/postman-post-autores.png)
+
+### PUT - Atualizar Autor
+
+![PUT Autor](prints/postman-put-autor1.png)
+
+### DELETE - Remover Autor
+
+![DELETE Autor](prints/postman-delete-autor.png)
+
+---
+
+## 🔗 Endpoints Disponíveis
+
+### Livros
+
+| Método | Endpoint    |
+| ------ | ----------- |
+| GET    | /livros     |
+| GET    | /livros/:id |
+| POST   | /livros     |
+| PUT    | /livros/:id |
+| DELETE | /livros/:id |
+
+### Autores
+
+| Método | Endpoint     |
+| ------ | ------------ |
+| GET    | /autores     |
+| GET    | /autores/:id |
+| POST   | /autores     |
+| PUT    | /autores/:id |
+| DELETE | /autores/:id |
+
+---
+
+## 👩‍💻 Autora
+Trícia Britto
+Projeto desenvolvido para a disciplina de Desenvolvimento de APIs – SENAI.
